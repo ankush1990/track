@@ -9,7 +9,7 @@
     <script src="lib/ionic/js/ionic.bundle.min.js"></script>
     <script src="js/ng-cordova.min.js"></script>
     <script src="cordova.js"></script>
-   
+   	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB16sGmIekuGIvYOfNoW9T44377IU2d2Es&sensor=false"></script>
 </head>
 <body>
 <ion-nav-bar class="header-bar">
@@ -86,7 +86,7 @@
 </script>
 
 <script id="templates/tabs.html" type="text/ng-template">
-<ion-tabs class="tabs-icon-bottom tabs-energized">
+<ion-tabs class="tabs-icon-bottom tabs-calm">
     <ion-tab title="Home" icon="ion-home" href="#/tab/home">
       <ion-nav-view name="home-tab"></ion-nav-view>
     </ion-tab>
@@ -155,11 +155,12 @@
 
 <script id="templates/setting.html" type="text/ng-template">
   <ion-view view-title="Settings">
-    <ion-content>
-        <ul class="list">
-            <li><a href="#/tab/schedule" class="item item-icon-right">Schedule</a></li>
-			<li><a href="#/tab/devicesetting" class="item item-icon-right">Paired Devices</a></li>
-        </ul>
+    <ion-content scroll="false">
+		<ul class="list">
+			<li><a href="#/event/getinformation" class="item item-icon-right">Get Information</a></li>
+			<li><a href="#/event/emailus" class="item item-icon-right">Email us</a></li>
+		</ul>
+      <map on-create="mapCreated(map)" style="height:70%"></map>
     </ion-content>
   </ion-view>
 </script>
@@ -224,14 +225,46 @@
 </script>
 
 <script id="templates/about.html" type="text/ng-template">
-  <ion-view view-title="About">
-	<ion-content class="padding">
-	  <h3>Create hybrid mobile apps with the web technologies you love.</h3>
-	  <p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building highly interactive apps.</p>
-	  <p>Built with Sass and optimized for AngularJS.</p>
-	  <p>
-		<a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
-	  </p>
+  <ion-view view-title="Alerts">
+	<ion-content>
+	  	<ul class="list">
+			<li class="item item-toggle">
+				 Ac On
+				 <label class="toggle toggle-calm">
+				   <input type="checkbox">
+				   <div class="track">
+					 <div class="handle"></div>
+				   </div>
+				 </label>
+		  	</li>
+			<li class="item item-toggle" style="background-color:#c3c3c3">
+				 Ac Off
+				 <label class="toggle toggle-calm">
+				   <input type="checkbox" checked>
+				   <div class="track">
+					 <div class="handle"></div>
+				   </div>
+				 </label>
+		  	</li>
+			<li class="item item-toggle">
+				 Ac On
+				 <label class="toggle toggle-calm">
+				   <input type="checkbox">
+				   <div class="track">
+					 <div class="handle"></div>
+				   </div>
+				 </label>
+		  	</li>
+			<li class="item item-toggle" style="background-color:#c3c3c3">
+				 Ac Off
+				 <label class="toggle toggle-calm">
+				   <input type="checkbox" checked>
+				   <div class="track">
+					 <div class="handle"></div>
+				   </div>
+				 </label>
+		  	</li>
+		</ul>
 	</ion-content>
   </ion-view>
 </script>
