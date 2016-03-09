@@ -1,4 +1,4 @@
-angular.module('ionicApp', ['ionic','ngCordova','ionic-timepicker','starter.controllers'])
+angular.module('ionicApp', ['ionic','ngCordova','starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
