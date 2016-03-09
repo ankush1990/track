@@ -1,16 +1,21 @@
 @charset "utf-8";
 /* CSS Document */
 
-/* body background color */
+/* header background color */
+.header-bar{background-color:#0898A1; color:#FFF;}
+
+.font_pancil::before{font-size:24px!important; margin-left:16px;}
+
+* body background color */
 .backcolor{background-color:#F8F8F8}
 
 /* ancher config */
 a{text-decoration: none; display:block; width:100%; color:#000;}
 
 /* header background color */
-.header-bar{background-color:#367FA9; color:#FFF; background-image:url(../images/logo1.png);}
+.header-bar{background-color:#34C1D6; color:#FFF; background-image:url(../images/logo1.png);}
 
-.loginback{background-image:url(../images/back.jpg);}
+.loginback{background-image:url(../images/back.png); background-repeat:no-repeat; background-size:100% 100%;}
 
 /* footer background color */
 .footer-bar{ color:#000; padding-top:35px; font-size:11px; background-image:url(../images/back.jpg);}
