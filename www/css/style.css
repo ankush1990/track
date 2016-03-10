@@ -52,7 +52,7 @@ a{text-decoration: none; display:block; width:100%; color:#000;}
 
 
 #homebottom{background-color:#29A6CF; width:100%; height:20px;  position:relative; bottom:00px;}
-
+#hometop{width:100%; height:140px;}
 
 map {
   display: block;
@@ -69,25 +69,29 @@ map {
 
 @media screen and (max-width: 1024px){
 	#homebottom{background-color:#29A6CF; width:100%; height:185px;  position:relative; bottom:00px;}
+	#hometop{width:100%; height:500px;}
 }
 	
 	
 @media screen and (max-width: 979px){
 	#homebottom{background-color:#29A6CF; width:100%; height:250px;  position:relative; bottom:00px;}
-	
+	#hometop{width:100%; height:460px;}
 }
 
 @media screen and (max-width: 767px){
 	#homebottom{background-color:#29A6CF; width:100%; height:200px;  position:relative; bottom:00px;}
+	#hometop{width:100%; height:200px;}
 }
 	
 
 @media screen and (max-width: 640px){
 	#homebottom{background-color:#29A6CF; width:100%; height:185px;  position:relative; bottom:00px;}
+	#hometop{width:100%; height:200px;}
 }
 		
 @media screen and (max-width: 320px){
 	#homebottom{background-color:#29A6CF; width:100%; height:50px;  position:relative; bottom:00px;}
+	#hometop{width:100%; height:140px;}
 }
 
 
