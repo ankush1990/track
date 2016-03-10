@@ -18,20 +18,37 @@ a{text-decoration: none; display:block; width:100%; color:#000;}
 .loginback{background-image:url(../images/back.png); background-repeat:no-repeat; background-size:100% 100%;}
 
 /* footer background color */
-.footer-bar{ color:#000; padding-top:35px; font-size:11px; background-image:url(../images/back.jpg);}
+.footer-bar{ color:#000; padding-top:40px; font-size:11px;}
 
 /* logo login */
 .root-loginlogo{ background-image:url(../images/root2.png); background-repeat:no-repeat; background-position:center; background-position:top;}
 
-/* button of three lines */
-.custom-button{color:#FFF;}
-.custom-button:hover{color:#FFF;}
+.customIconSound{ font-size:24px;}
 
 /* button color for login */
 .login-button{background-color:#2FAEC1; color:#FFF;}
 .login-button:hover{background-color:#367FA9; color:#FFF;}
 
 
+/*home bg icons*/
+#bg1{background-image:url(../images/1.png); background-repeat:no-repeat; background-position:center 5px; 
+    padding-top: 30px;}
+#bg2{background-image:url(../images/2.png); background-repeat:no-repeat; background-position:center 5px; 
+    padding-top: 30px;}
+#bg3{background-image:url(../images/3.png); background-repeat:no-repeat; background-position:center 5px; 
+    padding-top: 30px;}
+#bg4{background-image:url(../images/4.png); background-repeat:no-repeat; background-position:center 5px; 
+    padding-top: 30px;}
+#bg5{background-image:url(../images/5.png); background-repeat:no-repeat; background-position:center 5px; 
+    padding-top: 30px;}
+#bg6{background-image:url(../images/6.png); background-repeat:no-repeat; background-position:center 5px;
+    padding-top: 30px;}
+#bg7{background-image:url(../images/7.png); background-repeat:no-repeat; background-position:center 5px; 
+    padding-top: 30px;}
+#bg8{background-image:url(../images/8.png); background-repeat:no-repeat; background-position:center 5px;
+    padding-top: 30px;}
+#bg9{background-image:url(../images/9.png); background-repeat:no-repeat; background-position:center 5px;
+    padding-top: 30px;}
 
 map {
   display: block;
@@ -41,3 +58,4 @@ map {
 .scroll {
   height: 100%;
 }
+
