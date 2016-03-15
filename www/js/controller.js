@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
 	console.log(username);
 	console.log(logoutyn);
 	if((username != null) && (username != -1) && (logoutyn != 1)){
-		/*var password = localStorage.getItem("localpassword");
+		var password = localStorage.getItem("localpassword");
 		var data_parameters = "username="+username+ "&password="+password;
 		$http.post("http://"+globalip+"/userauth",data_parameters, {
 			headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
@@ -22,7 +22,7 @@ angular.module('starter.controllers', [])
 				localStorage.setItem("therm_online",response[0].online);
 				$state.go('tabs.home');
 			}
-		});*/
+		});
 		$state.go('tabs.home');
 	}
 	else{
@@ -61,27 +61,15 @@ angular.module('starter.controllers', [])
 				})
 			}
 			else{
-				/*var data_parameters = "username="+username+ "&password="+password;
-				$http.post("http://"+globalip+"/userauth",data_parameters, {
-					headers: {'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
-				})
-				.success(function(response) {
-					if(response[0].status == "Y"){
-						/*if(check){
-							localStorage.setItem("localpassword",password);
-						}*/
-						/*localStorage.setItem("localpassword",password);
-						localStorage.setItem("localusername",username);
-						localStorage.setItem("userid", response[0].user_id);
-						localStorage.setItem("slocid",response[0].sloc_id);
-						localStorage.setItem("orgid", response[0].org_id);
-						localStorage.setItem("thermame",response[0].thermostat_name);
-						localStorage.setItem("thermid",response[0].therm_id);
-						localStorage.setItem("token",response[0].token);
-						localStorage.setItem("therm_online",response[0].online);
-						$rootScope.$broadcast('eventThermname',{thermname:response[0].thermostat_name,thermid:response[0].therm_id});
-						
-						$state.go('eventmenu.checkin');
+				var method = "login";
+				$http.get(globalip+"method="+method, {params: {login: username,password: password}})
+				.success(function (data,status) {
+				
+					if(data.status == "ok"){
+						console.log(data);
+						token = data.data.token;
+						console.log(token);
+						$state.go('tabs.home');
 					}
 					else{
 						$ionicPopup.show({
@@ -96,8 +84,7 @@ angular.module('starter.controllers', [])
 						  ]
 						})
 					}
-				});*/
-				$state.go('tabs.home');
+				 });
 			}
 		};
 	}
@@ -173,9 +160,19 @@ angular.module('starter.controllers', [])
 	}
 })
 
-.controller('HomeTabCtrl', function($scope,$state) {
+.controller('HomeTabCtrl', function($scope,$state,$http,$ionicPopup,$rootScope) {
 	
-	
+	var method = "device-list";
+			$http.get(globalip+"method="+method, {params: {session_token: token}})
+			.success(function (data,status) {
+			
+				if(data.status == "ok"){
+					console.log(data);
+					token = data.data.token;
+					console.log(token);
+					$state.go('tabs.home');
+				}
+	});
 	
 	$scope.doLogout = function() {
 		$state.go('signin');
@@ -185,7 +182,10 @@ angular.module('starter.controllers', [])
   	};
 })
 
-.controller('settingCTRL', function($scope, $ionicLoading) {
+.controller('settingCTRL', function($scope,$ionicLoading,$http,$stateParams,$rootScope) {
+	
+	
+	
 	$scope.mapCreated = function(map) {
 		$scope.map = map;
 	};

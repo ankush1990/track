@@ -153,13 +153,20 @@
 </script>
 
 <script id="templates/setting.html" type="text/ng-template">
-  <ion-view view-title="Settings">
+  <ion-view view-title="Vehicle List">
     <ion-content scroll="false">
-		<ul class="list">
-			<li><a href="#/event/getinformation" class="item item-icon-right">Get Information</a></li>
-			<li><a href="#/event/emailus" class="item item-icon-right">Email us</a></li>
-		</ul>
-      <map on-create="mapCreated(map)" style="height:70%"></map>
+		<div class="list">
+			<label class="item item-radio"  ng-repeat="data in response">
+			<a href="#/event/check-in" menu-close ng-click="thermstat({{data.therm_id}},data.thermostat_name)">
+				<input type="radio" name="group">
+				<div class="item-content">
+				   {{data.thermostat_name}}
+				</div>
+				<i class="radio-icon ion-checkmark"></i>
+			</a>
+			</label>
+		</div>
+		
     </ion-content>
   </ion-view>
 </script>
@@ -205,7 +212,11 @@
 
 <script id="tabs/scheduledetailmodal.html" type="text/ng-template">
   <ion-modal-view>
-	
+	<ul class="list">
+			<li><a href="#/event/getinformation" class="item item-icon-right">Get Information</a></li>
+			<li><a href="#/event/emailus" class="item item-icon-right">Email us</a></li>
+		</ul>
+      <map on-create="mapCreated(map)" style="height:70%"></map>
   </ion-modal-view>
 </script>
 

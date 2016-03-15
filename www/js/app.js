@@ -1,3 +1,6 @@
+// JavaScript Document
+var globalip = "http://spotifire.co.in/attendance/apidata.php?";
+var token = "";
 angular.module('ionicApp', ['ionic','ngCordova','starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $ionicConfigProvider.tabs.position('bottom');
